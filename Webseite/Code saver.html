@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<title>www.Rehasport-und-Gesundheitsclub.de</title>
+</head>
+<body>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(#ffffff,#09163991);
+    font-family: 'Poppins', sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.logo {
+    display: block;
+    margin: 20px auto;
+    max-width: 2400px;
+}
+
+.toolbar {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 40px;
+    background: rgba(60, 60, 60, 0.35);
+    backdrop-filter: blur(2.5px);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.593),
+        inset 0 1px 0 rgba(255, 255, 255, 0.263);
+    z-index: 1000;
+}
+
+.toolbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.8s ease;
+}
+
+.toolbar a:hover {
+    color: #000000;
+    text-shadow:
+        0 0 10px rgba(0, 180, 255, 0.9),
+        0 0 10px rgba(0, 180, 255, 0.8),
+        0 0 20px rgba(0, 180, 255, 0.6),
+        0 0 20px rgba(0, 180, 255, 0.4);
+    filter: drop-shadow(0 0 100px rgba(0, 180, 255, 0.7));
+    transform: translateY(-2px);
+}
+
+.page {
+    display: none;
+    animation: fadeIn .5s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.toolbar button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.toolbar button:hover {
+    color: black;
+
+    text-shadow:
+        0 0 10px rgba(0,180,255,.9),
+        0 0 20px rgba(0,180,255,.6);
+
+    transform: translateY(-2px);
+}
+
+.textbox {
+    width: 96%;
+    margin: 30px auto;
+    padding: 15px;
+    border-radius: 20px;
+    background: rgba(0, 162, 255, 0.48);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.textboxintextbox {
+    width: 96%;
+    margin: 30px auto;
+    padding: 15px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.226);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.wichtigetextbox {
+    width: 96%;
+    margin: 30px auto;
+    padding: 15px;
+    border-radius: 20px;
+    background: rgba(175, 0, 0, 0.74);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.wichtigetextbox-start {
+    width: 80%;    
+    margin: 30px auto;
+    padding: 15px;
+    border-radius: 70px;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.15);
+    
+    background: 
+    linear-gradient( 
+    70deg, rgb(0, 0, 0, 0.9),
+    rgba(0, 36, 155, 0.453) ,
+    rgba(0, 0, 0, 0.9) )
+    
+}
+
+
+.textboxintextboxunten {
+    width: 96%;
+    margin: 30px auto;
+    padding: 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.429);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.textbox h2,
+.textbox h4 {
+    text-align: center;
+}
+
+.slideshow {
+    width: 750px;
+    max-width: 90%;
+    height: 450px;
+    margin: 0 auto 30px auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.8s ease;
+}
+
+h1 {
+    color:#cbcbcb;
+    text-align: center;
+    font-weight: 700;
+}
+
+h2 {
+    color: #000000;
+    text-align: center;
+    font-weight: 700;
+}
+
+h3 {
+    color: #e3e3e3;
+    text-align: center;
+    padding: 0 15px;
+    font-weight: 600;
+}
+
+h4 {
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.teammitglied {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 25px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.teammitglied img {
+    width: 180px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+
+    position: relative;
+    right: 10px;
+    bottom: 1px;
+    top: 1px;
+}
+
+.team-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.team-text h3 {
+    margin-top: 0;
+}
+
+.kontaktformular {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.kontaktformular label {
+    color: #1f1f1f;
+    font-weight: 500;
+}
+
+.kontaktformular input,
+.kontaktformular select,
+.kontaktformular textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    resize: vertical;
+}
+
+.kontaktformular button {
+    width: 100%;
+    max-width: 700px;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: #0054c2;
+    color: white;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.593),
+        inset 0 1.4px 0 rgba(255, 255, 255, 0.263);
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+
+.kontaktformular button:hover {
+    color: rgb(255, 255, 255);
+    filter: brightness(1.1);
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.65),
+        inset 0 1.4px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.kontaktformular button:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.5),
+        inset 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.liquid-card { 
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    width: 180px;
+    max-height: 58px;
+    overflow: hidden;
+    border-radius: 30px;
+    
+    background: 
+    linear-gradient( 
+    135deg, rgba(0, 0, 0, 0.671),
+    rgb(190, 0, 0) );
+    
+    backdrop-filter: blur(4px) saturate(180%);
+    
+    -webkit-backdrop-filter: blur(4px) saturate(180%);
+    
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.199),
+    inset 0 1px 1.5px rgba(0, 0, 0, 0.110);
+    
+    transition: width .45s cubic-bezier(.22,1,.36,1), 
+    max-height .45s cubic-bezier(.22,1,.36,1), 
+    border-radius .45s cubic-bezier(.22,1,.36,1), 
+    transform .3s ease; } 
+    
+    .liquid-card:hover { 
+        transform: translateY(-2px); 
+    } 
+    
+    .liquid-card.open { 
+        width: 360px;
+        max-height: 420px;
+        border-radius: 35px; 
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.481),
+    inset 0 1px 1.5px rgba(0, 0, 0, 0.463);
+    } 
+    
+    .liquid-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: 
+        linear-gradient(
+        180deg, rgba(0, 0, 0, 0.090),
+        rgba(255,255,255,0.02) 
+        ); 
+        pointer-events: none;
+    } 
+    
+    .liquid-button {
+        width: 100%; 
+        height: 58px;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: rgb(255, 255, 255);
+        font-family: 'Poppins',
+        sans-serif;
+        font-size: 15px; 
+        font-weight: 600; 
+        cursor: pointer; 
+    } 
+    
+    .liquid-content { 
+        opacity: 0; 
+        padding: 0 20px 20px; 
+        transition: opacity .25s ease; 
+        pointer-events: none; 
+    } 
+    
+    .liquid-card.open .liquid-content {
+        opacity: 1; 
+        pointer-events: auto;
+    } 
+    
+    .liquid-content table { 
+        width: 100%; 
+        border-collapse: collapse; 
+    } 
+    
+    .liquid-content td { 
+        color: rgb(255, 255, 255); 
+        padding: 12px 0; 
+        border-bottom: 1px solid rgba(0, 0, 0, 0.305); 
+    } 
+
+    .liquid-content tr:last-child td { 
+    border-bottom: none; 
+}
+
+.pinterest-gallery {
+  column-count: 4;              
+  column-gap: 1.5rem;           
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.pg-item {
+  position: relative;
+  display: inline-block;
+  top:  20px;
+  width: 100%;
+  margin: 0 0 1.5rem;
+  break-inside: avoid;          
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pg-item img {
+  display: block;
+  width: 100%;               
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  transition: transform 0.5s ease, box-shadow 0.35s ease, filter 0.35s ease;
+}
+
+.pg-item:hover img {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.267);
+  filter: brightness(1.2);
+}
+
+.pg-item:hover {
+  transform: translateY(-3px) rotateZ(-1.5deg);
+}
+
+.pg-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;               
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.pg-lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: pg-fade-in 0.25s ease-out;
+}
+
+.pg-lightbox-content img {
+  display: block;
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.pg-lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.pg-lightbox-close:hover {
+  transform: scale(1.2);
+  color: #ddd;
+}
+
+@keyframes pg-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .pinterest-gallery {
+    column-count: 3;
+  }
+}
+@media (max-width: 900px) {
+  .pinterest-gallery {
+    column-count: 2;
+  }
+}
+@media (max-width: 600px) {
+  .pinterest-gallery {
+    column-count: 1;
+  }
+
+  .pg-lightbox-close {
+    top: -32px;
+    font-size: 28px;
+  }
+}
+
+.kursplan {
+    width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transition: transform 0.5s ease, box-shadow 0.35s ease, filter 0.35s ease;
+}
+
+.kursplan:hover {
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.388);
+    filter: brightness(1.2);
+}
+
+.leistung-box {
+    width: 95%;
+    margin: 30px auto;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.226);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.leistung-header {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leistung-header h3 {
+    margin: 0;
+}
+
+.leistung-arrow {
+    font-size: 22px;
+    transition: transform .45s cubic-bezier(.22,1,.36,1);
+}
+
+.leistung-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .45s cubic-bezier(.22,1,.36,1);
+}
+
+.leistung-body-inner {
+    overflow: hidden;
+}
+
+.leistung-box.open .leistung-body {
+    grid-template-rows: 1fr;
+}
+
+.leistung-box.open .leistung-arrow {
+    transform: rotate(180deg);
+}
+
+.leistung-body h4 {
+    margin: 0;
+    padding: 0 20px 65px 20px;
+}
+
+</style>
+
+<div class="liquid-card" id="liquidCard">
+     <button class="liquid-button" id="liquidButton">Öffnungszeiten</button> 
+     <div class="liquid-content"> 
+        
+        <table>
+            <tr>
+                <td>Montag</td>
+                <td>08:00 - 18:00</td>
+            </tr>
+            <tr>
+                <td>Dienstag</td>
+                <td>08:00 - 18:00</td> 
+            </tr> 
+            <tr> 
+                <td>Mittwoch</td> 
+                <td>08:00 - 18:00</td> 
+            </tr> 
+            <tr> 
+                <td>Donnerstag</td> 
+                <td>08:00 - 18:00</td> 
+            </tr> 
+            <tr> 
+                <td>Freitag</td> 
+                <td>08:00 - 18:00</td> 
+            </tr> 
+            <tr> 
+                <td>Samstag / Sonntag</td> 
+                <td>Geschlossen</td> 
+            </tr> 
+            <tr> 
+                <td>Feiertage</td> 
+                <td>Geschlossen</td> 
+            </tr> 
+        </table> 
+    </div>
+</div>
+
+<section id="start" class="page active">
+    <img class="logo" width="500" src="Logo.png" alt="Logo">
+
+     <div class="slideshow">
+        <img id="bild" src="Bild.jpeg" alt="Diashow">
+    </div>
+   
+    <div class="wichtigetextbox-start">
+        <br>
+        <br>
+        <h1>Hochwertige Rehakurse mit vielen freien Plätzen!!!</h1>
+        <h4>
+        <br>Jetzt oder gleich im neuen Jahr starten!
+        <br>In unseren Rehakursen sind für Sie immer Plätze frei!
+        <br>Schnell anmelden unter 0391 2524640, dann geht es diese oder nächste Woche schon los.
+        </h4>
+        <br>
+        <br>
+    </div>
+
+    <div class="wichtigetextbox">
+     <h4>Wir beraten Sie gerne in einem individuellen Gespräch in dem wir auf Ihre Erkrankungen und Einschränkungen eingehen und Ihnen dafür Lösungen bieten.
+        <br>Zusätzlich zu ihrem Rehakurs ist es meist ratsam ein medizinisches Muskeltraining durchzuführen um gezielt Muskulatur für ihr Krankheitsbild aufzubauen.
+        <br>Sie entscheiden selber was Sie nutzen möchten.
+        <br>Bringen Sie, wenn möglich schon ein ausgefülltes Rezept von ihrem Arzt, mit der Unterschrift ihrer Krankenkasse, mit!
+        <br>Auch ohne Rezept ist eine Beratung möglich und sinnvoll.
+        <br>Unter Tel. 0391/2524640 können sie uns innerhalb der Öffnungszeiten erreichen (Montag - Freitag  /  8:00 - 18:00 Uhr).
+        <br>In einem ersten Gespräch wird dann besprochen wie und wann sie am besten starten.
+    </div>
+
+    <div class="textbox">
+        <h2>Ganzheitliches Gesundheitstraining 
+        <br>★★★★★
+        <br>– in Ihrem Rehasport und Gesundheitsclub in Magdeburg -
+        </h2>
+    <div class="textboxintextbox">
+        <h4>Der Trainingsschwerpunkt im Sport und Gesundheitsclub liegt auf professionell betreutem Rehatraining und medizinischem Muskeltraining.
+            <br>Neunzig Prozent aller Untrainierten weisen kleine bis große Muskeldysbalancen auf.
+            <br>Diese müssen mit einem speziellen Training, zumeist mit einem medizinischen Muskeltraining ausgeglichen werden.
+            <br>Nur so können Rücken, Hüften, Knien und andere Gelenke wieder entlastet und gestärkt werden.
+            <br>Wissenschaftliche Erkenntnisse belegen, dass eine gut trainierte Muskulatur die Grundvoraussetzung für einen gesunden Körper ist und gleichzeitig die Gesundheit wieder herstellt und das Krankheitsrisiko minimiert.
+            <br>Aktive Muskeln machen gesund, leistungsfähig und stärken so das Immunsystem!
+            <br>Häufige Beschwerden wie Rückenschmerzen, Bluthochdruck, Hüftprobleme oder Knieprobleme können entschieden verbesser werden und auch Altersprozesse lassen sich mit einem gezielten Muskeltraining im Gesundheitsstudio eindämmen.
+        </h4>
+    </div>
+    </div>
+</section>
+
+<section id="ueber-uns" class="page">
+ <div class="textbox">
+  <h2>Über uns</h2>
+  <div class="textboxintextbox">
+  <h3>Betreuung zum Wohlfühlen</h3>
+  <h4>
+      <br>Der Sport und Gesundheitsclub ist weit mehr als nur ein Ort, an dem Menschen trainieren.
+      <br>Unser Studio steht für ein ganzheitliches Konzept, das den Menschen und sein Wohlbefinden in den Mittelpunkt rückt.
+      <br>Das umfasst sowohl hochmoderne Geräte und ein bestens ausgebildetes orthopädisches Personal als auch gesundheitsorientiertes Training und ein individuell abgestimmtes Betreuungsprogramm rund um die Gesundheit der Teinehmer.
+      <br>Die Qualität steht dabei ganz klar im Fokus.
+  </h4>
+  </div>
+  <div class="textboxintextbox">
+  <h3>Renaissance des Muskeltrainings</h3>
+  <h4>
+      Der Trainingsschwerpunkt liegt auf medizinischen Muskeltraining.
+      Wissenschaftliche Erkenntnisse belegen, dass eine gut trainierte Muskulatur das Krankheitsrisiko minimiert, denn aktive Muskeln halten gesund, leistungsfähig und stärken so das Immunsystem.
+      Auch Altersprozesse lassen sich eindämmen.
+      Das beste Beispiel hierfür war der 97-jährige Fitnessweltmeister Charles Eugster,
+      welcher erst mit 85 Jahren begann zu trainieren und dann mehrere Fitness Weltrekorde hielt.
+      Der Sport und Gesundheitsclub arbeitet eng mit der Sportmedizinerin Prof. Dr. Elke Zimmermann von der Universität Bielefeld zusammen, um die wissenschaftliche Basis für die individuellen Trainingsprogramme zu bilden.
+  </h4>
+  </div>
+  <div class="textboxintextbox">
+  <h3>Professionelle Ausbildung</h3>
+  <h4>
+      Regelmäßige Schulungen der Trainerinnen und Trainer garantieren eine hervorragende Ausbildung zum ganzheitlichen Experten, die den Mitgliedern in den Studios jeden Tag zugute kommt.
+      Überdurchschnittlich qualifizierte Referenten aus der Trainingswissenschaft, der Medizin, der Rehabilitation, des Leistungs- und des Breitensports, der Psychologie, der Kommunikations- und der Motivationslehre stellen dafür ihre Erfahrung zur Verfügung.
+      Trainieren Sie in einem sehr persönlichen Umfeld.
+      Bei uns geht es um Qualität in Sachen Beratung und Begleitung.
+      Starten Sie mit einem Beratungsgespräch und lassen Sie sich alle Ihre Möglichkeiten aufzeigen.
+      Wir begleiten Sie beim Erreichen Ihrer Ziele.
+      Alle 25 Trainingseinheiten setzen wir uns wieder mit Ihnen zusammen und sehen, wie weit Sie auf Ihrem Weg schon sind.
+      Wir schauen, wo Verbesserungen zu realisieren sind und schneidern Ihnen so ein ganz individuelles Programm auf Ihre Lebenssituation zu.
+  </h4>
+  </div>
+ </div>
+</section>
+
+<section id="team" class="page">
+    <div class="textbox">
+        <h2>Das Team</h2>
+        <div class="leistung-box">
+    <div class="leistung-header">
+        <h3>Leitung / Trainer</h3>
+        <span class="leistung-arrow">▲</span>
+    </div>
+    <div class="leistung-body">
+        <div class="leistung-body-inner">
+            <div class="teammitglied">
+    <img src="Ulrich-Epperlein.png" alt="Ulrich Epperlein" >
+    <div class="team-text">
+    <h2>Ulrich Epperlein</h2>
+    <h4>
+     <br>Uli eröffnete den Sport und Gesundheitsclub im Dezember 1991 und ist seitdem ein engagierter Trainer, Geschäftsführer, Ernährungs- und Rückenexperte.
+     <br>Er ist krankenkassenärztlich anerkannter Rehatrainer und Ihr Experte, wenn es um jegliche Art von orthopädischen Erkrankungen geht.
+     <br>Bei ihm ist erst das Hobby zum Beruf geworden und dann der Beruf zur Berufung.
+   </h4>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+          <div class="leistung-box">
+    <div class="leistung-header">
+        <h3>Service / Trainer:in</h3>
+        <span class="leistung-arrow">▲</span>
+    </div>
+    <div class="leistung-body">
+        <div class="leistung-body-inner">
+            <div class="teammitglied">
+    <img src="Ramona-Grießbach.png" alt="Ulrich Epperlein" >
+    <div class="team-text">
+    <h2>Ramona Grießbach</h2>
+     <h4>Ramona Grießbach ist seit vielen Jahren im Sport und Gesundheitsclub.
+     <br>Sie ist Trainerin und Beraterin aus Leidenschaft.
+     <br>In den vergangenden Jahren hat sie hat sich unzählige male weiter gebildet.
+     <br>Unter anderem ist sie krankenkassenärtzlich anerkannte Rehatrainerin.
+    </h4>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+</section>
+
+<section id="leistungen" class="page">
+    <div class="textbox">
+        <h2>Leistungen</h2>
+        <div class="textboxintextbox">
+  
+        <div class="leistung-box">
+    <div class="leistung-header">
+        <h3>...</h3>
+        <span class="leistung-arrow">▲</span>
+    </div>
+    <div class="leistung-body">
+        <div class="leistung-body-inner">
+            <h4>
+                nichts
+            </h4>
+        </div>
+    </div>
+    </div>
+    
+    <div class="leistung-box">
+    <div class="leistung-header">
+        <h3>...</h3>
+        <span class="leistung-arrow">▲</span>
+    </div>
+    <div class="leistung-body">
+        <div class="leistung-body-inner">
+            <h4>
+                nichts
+            </h4>
+        </div>
+    </div>
+    </div>
+
+
+            <div class="leistung-box">
+    <div class="leistung-header">
+        <h3>...</h3>
+        <span class="leistung-arrow">▲</span>
+    </div>
+    <div class="leistung-body">
+        <div class="leistung-body-inner">
+            <h4>
+                nichts
+            </h4>
+        </div>
+    </div>
+    </div>
+
+            <div class="leistung-box">
+    <div class="leistung-header">
+        <h3>...</h3>
+        <span class="leistung-arrow">▲</span>
+    </div>
+    <div class="leistung-body">
+        <div class="leistung-body-inner">
+            <h4>
+                nichts
+            </h4>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+</section>
+
+<section id="aktuelles" class="page">
+    <div class="textbox">
+    <h2>Aktuelles</h2>
+    <div class="textboxintextbox">
+  <h3>Innenausstattung</h3>
+  <h4>Wir haben unstern gesamten Boden aufwendig erneuert und Wände gestrichen.
+  <br>In kürze werden auch die Umkleiden an das neue Design angepasst um ihnen ein sauberes und Gemütliches Umfeld zu bieten.</h4>
+  <h6>24.06.2026</h6>
+</div>
+    </div>
+</section>
+
+<section id="kurse" class="page">
+    <div class="textbox">
+        <h2>Kurse</h2>
+         <div style="text-align:center;">
+        <img src="Kursplan.jpeg" alt="Kursplan" class="kursplan">
+    </div>
+    </div>
+</section>
+
+<section id="kontakt" class="page">
+    <div class="textbox">
+     <h2>Kontakt</h2>
+     <h4>Haben Sie Fragen oder möchten Sie sich gerne vor Ort beraten lassen?
+        <br>Dann senden Sie uns eine Nachricht.</h4>
+        <br>
+    <div class="textboxintextbox">
+     <form id="kontaktformular" class="kontaktformular">
+
+      <label>Name</label>
+      <input type="text" id="name" required>
+
+      <label>Telefonnummer</label>
+      <input type="tel" id="telefon" required>
+
+      <label>E-Mail Adresse</label>
+      <input type="email" id="email">
+
+     <label>Ihr Anliegen</label>
+     <select>
+        <option>allgemeine Anfrage</option>
+        <option>Abnehmen</option>
+        <option>Rückenfitness</option>
+        <option>Herz-Kreislauf</option>
+        <option>Gruppenfitness</option>
+        <option>Sauna & Wellness</option>
+        <option>Reha-Angebote</option>
+    </select>
+
+    <label>Ihre Nachricht</label>
+    <textarea required></textarea>
+
+    <button type="submit">
+        Nachricht absenden
+    </button>
+    <br>
+
+</form>
+</div>
+</div>
+    
+</section>
+<section id="bilder" class="page">
+<div class="pinterest-gallery">
+  <div class="pg-item">
+    <img src="Bild-4.jpeg" alt="Bild 1">
+  </div>
+  <div class="pg-item">
+    <img src="Bild-5.jpeg" alt="Bild 2">
+  </div>
+  <div class="pg-item">
+    <img src="Bild-6.jpeg" alt="Bild 3">
+  </div>
+  <div class="pg-item">
+    <img src="Bild-7.jpeg" alt="Bild 4">
+  </div>
+   <div class="pg-item">
+    <img src="Bild-8.jpeg" alt="Bild 5">
+  </div>
+  <div class="pg-item">
+    <img src="Bild-9.jpeg" alt="Bild 5">
+  </div>
+  <div class="pg-item">
+    <img src="Bild-10.jpeg" alt="Bild 6">
+  </div>
+    <div class="pg-item">
+    <img src="Bild-11.jpeg" alt="Bild 7">
+  </div>
+  <div class="pg-item">
+    <img src="Bild-12.jpeg" alt="Bild 8">
+  </div>
+  <div class="pg-item">
+    <img src="Bild-13.jpeg" alt="Bild 9">
+  </div>
+  <div class="pg-item">
+    <img src="Bild-14.jpeg" alt="Bild 10">
+  </div>
+</div>
+
+<div class="pg-lightbox" id="pgLightbox">
+  <div class="pg-lightbox-content">
+    <span class="pg-lightbox-close" id="pgLightboxClose">&times;</span>
+    <img src="" alt="Großansicht" id="pgLightboxImg">
+  </div>
+</div>
+</section>
+
+<div class="toolbar">
+<button onclick="showPage('start')">Start</button>
+<button onclick="showPage('ueber-uns')">Über uns</button>
+<button onclick="showPage('team')">Team</button>
+<button onclick="showPage('leistungen')">Leistungen</button>
+<button onclick="showPage('aktuelles')">Aktuelles</button>
+<button onclick="showPage('kurse')">Kurse</button>
+<button onclick="showPage('kontakt')">Kontakt</button>
+<button onclick="showPage('bilder')">Bilder</button>
+</div>
+<br>
+<br>
+<br>
+
+<script>
+const bilder = [
+    "Bild-4.jpeg",
+    "Bild-5.jpeg",
+    "Bild-6.jpeg",
+    "Bild-7.jpeg",
+    "Bild-8.jpeg",
+    "Bild-9.jpeg",
+    "Bild-10.jpeg",
+    "Bild-11.jpeg",
+    "Bild-12.jpeg",
+    "Bild-13.jpeg",
+    "Bild-14.jpeg",
+    "Bild-15.jpeg"
+];
+
+let aktuellesBild = 0;
+const img = document.getElementById("bild");
+
+function wechselBild() {
+    img.style.opacity = "0";
+
+    setTimeout(() => {
+        aktuellesBild = (aktuellesBild + 1) % bilder.length;
+        img.src = bilder[aktuellesBild];
+        img.style.opacity = "1";
+    }, 400);
+}
+
+setInterval(wechselBild, 4000);
+</script>
+<script>
+const liquidCard = document.getElementById("liquidCard");
+const liquidButton = document.getElementById("liquidButton");
+
+liquidButton.addEventListener("click", function(event) {
+
+    event.stopPropagation();
+
+    liquidCard.classList.toggle("open");
+
+});
+
+document.addEventListener("click", function(event) {
+
+    if (
+        liquidCard.classList.contains("open") &&
+        !liquidCard.contains(event.target)
+    ) {
+        liquidCard.classList.remove("open");
+    }
+
+});
+
+document.addEventListener("touchstart", function(event) {
+
+    if (
+        liquidCard.classList.contains("open") &&
+        !liquidCard.contains(event.target)
+    ) {
+        liquidCard.classList.remove("open");
+    }
+
+});
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.pg-item img');
+    const lightbox = document.getElementById('pgLightbox');
+    const lightboxImg = document.getElementById('pgLightboxImg');
+    const closeBtn = document.getElementById('pgLightboxClose');
+
+    items.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;         // img.dataset.largeSrc (fuer grosse dateien)
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+      }
+    });
+  });
+</script>
+<script>
+function showPage(id){
+
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+
+}
+</script>
+<script>
+document.querySelectorAll(".leistung-header").forEach(header => {
+
+    header.addEventListener("click", () => {
+
+        const aktuelleBox = header.parentElement;
+        const istOffen = aktuelleBox.classList.contains("open");
+
+        document.querySelectorAll(".leistung-box").forEach(box => {
+            box.classList.remove("open");
+        });
+
+        if (!istOffen) {
+            aktuelleBox.classList.add("open");
+        }
+
+    });
+
+});
+</script>
+</body>
+</html> 
